@@ -12,19 +12,23 @@
                 {{--  wire:model.defer  en vez de mandar la peticion cadaque se esirba una letaa, la manda cuando se oprime el boton --}}
                 <x-label value="Nombre" />
                 <x-input class="w-full" wire:model.defer="name"/>
+                <x-input-error for="name"/>
             </div>
             <div class="mb-4">
                 <x-label value="Descripcion" />
                 <textarea name="" wire:model.defer="description" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" cols="6" rows="6"></textarea>
+                <x-input-error for="description"/>
             </div>
             <div class="grid grid-cols-2 gap-2">
                 <div class="mb-4">
                     <x-label value="Precio" />
                     <x-input class="w-full" wire:model.defer="price"/>
+                    <x-input-error for="price"/>
                 </div>
                 <div class="mb-4">
                     <x-label value="Stock" />
                     <x-input class="w-full" wire:model.defer="stock"/>
+                    <x-input-error for="stock"/>
                 </div>
             </div>
 

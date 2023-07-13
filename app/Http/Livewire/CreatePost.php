@@ -12,9 +12,17 @@ class CreatePost extends Component
     public $description;
     public $price;
     public $stock;
+    
+    protected $rules = [
+        'name' => 'required|max:100|min:5',
+        'description' => 'required|max:100|min:10',
+        'price' => 'required',
+        'stock' => 'required',
+    ];
 
     /* crear producto */
     public function save(){
+        $this->validate();
         Product::create([
             'name' => $this->name,
             'description' => $this->description,
@@ -26,7 +34,6 @@ class CreatePost extends Component
         /* emitir evento con el metodo  emit('')*/
         $this->emit('render');
     }
-
 
     public function render()
     {
