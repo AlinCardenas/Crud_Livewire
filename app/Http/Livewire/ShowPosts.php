@@ -5,11 +5,16 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 
+use function Termwind\render;
+
 class ShowPosts extends Component
 {
     public $search;
     public $sort = 'id';
     public $direction = 'desc';
+    /* en este array se escucha el evento que se emitio */
+    /* ['nombre de metodo emitido' => 'metodo que se va a ejecutar'] */
+    protected $listeners =['render'=> 'render'];
     public function render()
     {
         /* consulta para crear buscador filta por contenido de campo de nombre y de descripcion  */

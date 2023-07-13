@@ -3,9 +3,10 @@
         <div class="md:px-32  w-full">
             {{-- buscador --}}
             <div class="shadow overflow-hidden rounded border-b border-gray-200"> 
-                <div class="px-6 py-4">
+                <div class="px-6 py-4 flex items-center">
                     {{-- Sincronizar con variale search se isa el wire:model --}}
-                    <x-input type="text" wire:model="search" class="w-full" placeholder="Buscador" />
+                    <x-input type="text" wire:model="search" class="flex-1 mr-4" placeholder="Buscador" />
+                    @livewire('create-post')
                 </div>
                 @if ($products->count())
                     <table class="min-w-full bg-white">
